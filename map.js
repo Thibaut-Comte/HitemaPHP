@@ -20,7 +20,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 function getMarkers() {
 
-	$.getJSON(m"ap.geojson",function(data){
+	$.getJSON("map.geojson",function(data){
 
 		L.geoJson(data,{
 			pointToLayer: function(feature,latlng){				
