@@ -6,6 +6,11 @@ var marqueurs = [];
 
 var lgMarkers = new L.LayerGroup();
 
+var Icon= L.icon({
+	iconUrl:'https://gemeinde-lambrechtshagen.de/wp-content/uploads/Objektveranwortlicher.png',
+	iconSize:  [30,30]
+});
+
 getMarkers();
 
 mymap.on('movestart', onStart);
@@ -16,7 +21,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 	maxZoom: 18,
 	id: 'mapbox.streets',
 	accessToken: 'pk.eyJ1IjoidGNvbXRlIiwiYSI6ImNqbTYwejkwdzAzc2QzcW54cDdkdGE1ZnYifQ.ckjNHA2niw5ZOpo8WkPRnw'
-}).addTo(mymap);	
+}).addTo(mymap);
 
 function getMarkers() {
 
@@ -24,7 +29,7 @@ function getMarkers() {
 
 		L.geoJson(data,{
 			pointToLayer: function(feature,latlng){				
-				var marker = L.marker(latlng);
+				var marker = L.marker(latlng, {icon: Icon});
 				marker.bindPopup("<div style='width: 150%;'><center><h1>Réservation </h1></center><hr><form action = '' method = 'post'><center>Hotel N° <strong><label>"+feature.id+"</label></strong></center><div class='row'><div class='col'><input type ='date' class='form-control' name='dateArrivee'></div><div class='col'><input type ='date' class='form-control' name='dateRentree' ></div></div></br><input type ='number' name='nbVoyageurs' class='form-control' placeholder='Nombre de personnes' min=1><br><center><button type = 'submit' class='btn btn-primary bnt-lg'> Réserver </button></center></form></div>");
 				marqueurs.push(marker);
 				return marker;
