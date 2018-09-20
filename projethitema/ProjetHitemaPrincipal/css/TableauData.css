@@ -1,0 +1,34 @@
+body{
+    background-color: #fff;
+}
+
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+    .dataTables_filter{
+    	display: none;
+    }
+    .dataTables_length{
+    	display: none;
+    }
+th{
+    text-align: center;
+    background-color: #fff;
+}
+
+td{
+    text-align: center;
+}
+
+h2{
+    float: center;
+    color: #3c8dbc;
+    border: 1px solid #3c8dbc;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-family: Neucha, Arial, sans serif;
+
+}

@@ -30,7 +30,7 @@
 <style type="text/css">
 	.leaflet-popup-content-wrapper{
 
-		min-width: 110%;
+		min-width: 90%;
 	}
 input{
 	text-align: center;
