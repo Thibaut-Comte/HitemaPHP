@@ -1,6 +1,8 @@
 //Fichier à placé dans une balise script sous la popup modal de map.php
 //Instance de la map
-var mymap = L.map('mapid').setView([55, 12], 4);
+var mymap = L.map('mapid', { minZoom :2 ,zoomSnap: 0.25});
+
+mymap.setView([45,12],4);
 
 var marqueurs = [];
 
@@ -11,11 +13,16 @@ var Icon= L.icon({
 	iconUrl:'https://gemeinde-lambrechtshagen.de/wp-content/uploads/Objektveranwortlicher.png',
 	iconSize:  [30,30]
 });
+	     	
+var southWest = L.latLng(-89.98155760646617, -180),
+northEast = L.latLng(89.99346179538875, 180);
+var bounds = L.latLngBounds(southWest, northEast);
 
+mymap.setMaxBounds(bounds); 
 
 init();
 
-
+mymap.on('drag', onDrag);
 mymap.on('movestart', onStart);
 mymap.on('moveend', onEnd);
 
@@ -59,16 +66,22 @@ var boutonRechercher=document.querySelector('#ValidationRequete'); // ton bouton
 	     ReturnMapMarker=JSON.parse(this.responseText);  // Le retour affiche la page ou s'execute la requete, si etatRequete== 4 c'est bon ca a executé
 	     if(ReturnMapMarker)
 	     {
-	     	console.log(ReturnMapMarker)
 	     	onStart();
+	     	if(ValeurEnvoie=="")
+	     	{
+	     		mymap.flyTo([45,12],4);
+	     	}
+	     	else
+	     	{
+	     		mymap.flyTo([ReturnMapMarker[0].Latitude,ReturnMapMarker[0].Longitude],8.5)
+	     	}
 	     	getMarkers();
-	     	//mymap.setView([45, 12], 4)
 	     }	
 	    }
 	  };
 
 	  var ValeurEnvoie=encodeURIComponent(document.getElementById('Ville').value);
-		if(ValeurEnvoie==="")
+		if(ValeurEnvoie=="")
 		{
 			xhr.open("GET", "apiMain.php?action=get_list_articles", true);
 		}
@@ -83,18 +96,18 @@ var boutonRechercher=document.querySelector('#ValidationRequete'); // ton bouton
 
 
 function getMarkers() {
-	console.log(ReturnMapMarker)
 	marqueurs=[];	
 	for(var value of ReturnMapMarker)
 	{					
 				latlng=[value.Latitude, value.Longitude];	
 				var marker = L.marker(latlng, {icon: Icon});
-				marker.bindPopup("<div ><center><h1>Réservation </h1></center><form method = 'post'><center><strong><label>"+value.Name+"</label></strong><br><img  width='200px' height='100px' src='../imgHotel/"+value.Image+"'></center><hr><div class='row'><div class='col'><input type ='date' class='form-control' name='dateArrivee'></div><div class='col'><input type ='date' class='form-control' name='dateRentree' ></div></div></br><input type ='number' name='nbVoyageurs' class='form-control' placeholder='Nombre de personnes' min=1><br><center><button type = 'submit' class='btn btn-primary bnt-lg'> Réserver </button></center></form></div>");
-				//marker.bindPopup("<div class='card' style='width: 210%;border:none;'><center><img src='../imgHotel/Paris1Picture.jpg'  height='100px' width='100px'></center><div class='card-body'><h5 class='card-title'>Au Belvédére</h5><hr><p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p><div class='row'><div class='col'><input type ='date' class='form-control' name='dateArrivee'></div><div class='col'><input type ='date' class='form-control' name='dateRentree' ></div></div></br><input type ='number' name='nbVoyageurs' class='form-control' placeholder='Nombre de personnes' min=1><br><center><a href='#' class='btn btn-primary' style='color: #fff;'>Go somewhere</a></div></div>");
+				marker.bindPopup("<div ><center><h1>Réservation </h1></center><form action='Reservation.php' method ='post'><center><strong><label name='Hotel'>"+value.Name+"</label></strong><br><img  width='200px' height='100px' src='../imgHotel/"+value.Image+"'></center><hr><div class='row'><div class='col'><input type ='date' class='form-control' name='dateArrivee'></div><div class='col'><input type ='date' class='form-control' name='dateDepart' ></div></div></br><input type ='number' name='nbVoyageurs' class='form-control' placeholder='Nombre de personnes' min=1><br><center><button type ='button' class='btn btn-primary bnt-lg' id='Reservation'  onclick='Reservation' > Réserver </button></center></form></div>");
+				//marker.bindPopup("<div class='card' style='width: 210%;border:none;'><center><img src='../imgHotel/Paris1Picture.jpg'  height='100px' width='100px'></center><div class='card-body'><h5 class='card-title'>Au Belvédére</h5><hr><p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p><div class='row'><div class='col'><input type ='date' class='form-control' name='dateArrivee'></div><div class='col'><input type ='date' class='form-control' name='dateRentree' ></div></div></br><input type ='number' name='nbVoyageurs' class='form-control' placeholder='Nombre de personnes' min=1><br><center><a href='#' class='btn btn-primary' style='color: # fff;'>Go somewhere</a></div></div>");
 	
-				marqueurs.push(marker);
+			marqueurs.push(marker);
 
-			
+				
+	
 	}
 	afficher();
 }	
@@ -128,6 +141,10 @@ function onStart(e) {
 function onEnd(e) {
 	afficher();
 }
+function onDrag(e) {
+    mymap.panInsideBounds(bounds, { animate: false });
+};
 
+GetNameMap();
 
 

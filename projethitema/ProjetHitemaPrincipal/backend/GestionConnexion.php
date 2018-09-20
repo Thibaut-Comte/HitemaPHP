@@ -7,7 +7,7 @@ if(isset($_POST['submitValidation']))
 
 	if($_POST['username']!="" && $_POST['password']!="")
 	{
-
+		$_POST['password']=hash('sha256', $_POST['password']);
 		$ValueUser=GETusers($base,$_POST['username'],$_POST['password']);
 		if($ValueUser>0)
 		{

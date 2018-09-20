@@ -19,8 +19,8 @@
                                  <strong><label class="mr-2">Bienvenue <?php echo $_SESSION["username"];?></label></strong>
                              </button>
                              <div class="dropdown-menu">
-                                 <a class="dropdown-item" href="http://localhost/projethitemaprincipal/backend/administration.php"> Administration </a>
-                                <a class="dropdown-item" href="http://localhost/projethitemaprincipal/backend/Disconnect.php">Se déconnecter</a>
+                                 <a class="dropdown-item" href="http://localhost/hitemaphp/projethitema/ProjetHitemaPrincipal/backend/administration.php"> Administration </a>
+                                <a class="dropdown-item" href="http://localhost/hitemaphp/projethitema/ProjetHitemaPrincipal/backend/Disconnect.php">Se déconnecter</a>
                              </div>   
                             </div>
                         <?php
