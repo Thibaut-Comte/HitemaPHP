@@ -1,0 +1,89 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "id": 0,
+    
+      "name":"Le Havre",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.703125,
+          49.15296965617042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1,
+      "name":"Paris",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.373046875,
+          48.922499263758255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "name":"Bruxelles",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.5703125,
+          50.84757295365389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "name":"Paris",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.373046875,
+          48.222499263758255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "name":"Pau",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.52734375,
+          43.32517767999296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "name":"Munchen",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.634765625,
+          48.574789910928864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "name":"Teruel",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.40625,
+          40.44694705960048
+        ]
+      }
+    }
+  ]
+}

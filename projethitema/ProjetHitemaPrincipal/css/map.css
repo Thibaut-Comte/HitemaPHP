@@ -1,0 +1,41 @@
+/*GLOBALS*/
+*{margin:0; padding:0; list-style:none;}
+a{text-decoration:none; color:#666;}
+a:hover{color:#1bc1a3;}
+body, hmtl{background: #ecf0f1; font-family: Neucha, Arial, sans serif;}
+
+.intro-2 {
+
+    background-size: cover;
+
+}
+#mapid { 
+    height: 670px;
+
+
+   
+
+     }
+
+.view{
+    height: 100%;
+
+}
+
+.test2{
+ border: 2px solid #3c8dbc;
+  margin: 0px;
+    padding: 0px;
+    	-webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+}
+
+h1, h2{text-shadow:none; text-align:center;}
+h1{ color: #666; text-transform:uppercase;  font-size:36px;}
+h2{ color: #7f8c8d; font-family: Neucha, Arial, sans serif; font-size:18px; margin-bottom:30px;} 
+
+.lead{
+	text-transform:uppercase;
+	color: #7f8c8d; font-family: Neucha, Arial, sans serif; font-size:18px; margin-bottom:30px;
+}
