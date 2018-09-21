@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 20 sep. 2018 à 14:04
+-- Généré le :  ven. 21 sep. 2018 à 08:24
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   `Nombre_Personne` int(11) NOT NULL,
   `Date_Reservation` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `reservation`
@@ -80,7 +80,8 @@ CREATE TABLE IF NOT EXISTS `reservation` (
 INSERT INTO `reservation` (`ID`, `utilisateur`, `Hotel_ID`, `Hotel_Name`, `Arrivee`, `Depart`, `Nombre_Personne`, `Date_Reservation`) VALUES
 (1, 'admin', 6, 'Los Tapas', '2018-09-19', '2018-09-12', 6, 1537446506),
 (2, 'admin', 5, 'Die Deutschen', '2018-10-05', '2018-10-07', 5, 1537448252),
-(3, 'admin', 4, 'Au Petit Four', '2018-09-19', '2018-09-28', 8, 1537452156);
+(3, 'admin', 4, 'Au Petit Four', '2018-09-19', '2018-09-28', 8, 1537452156),
+(4, 'utilisateur', 2, 'Le Cabaret', '2018-09-29', '2018-10-13', 3, 1537516671);
 
 -- --------------------------------------------------------
 
