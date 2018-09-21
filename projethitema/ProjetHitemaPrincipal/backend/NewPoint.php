@@ -23,6 +23,9 @@
 		crossorigin=""></script>
 </head>
 <body>
+	<style type="text/css">
+		
+	</style>
 <?php
 session_start();
 	require_once('connectMenu.php');

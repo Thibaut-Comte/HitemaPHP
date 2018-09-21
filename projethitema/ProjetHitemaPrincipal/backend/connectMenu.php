@@ -22,7 +22,8 @@
                               <?php
                                 if($_SESSION['username']=='admin')
                                 {
-                                  echo '<a class="dropdown-item" href="http://localhost/hitemaphp/projethitema/ProjetHitemaPrincipal/backend/administration.php"> Administration </a>';
+                                  echo '<a class="dropdown-item" href="http://localhost/hitemaphp/projethitema/ProjetHitemaPrincipal/backend/administration.php"> Administration </a>
+                                        <a class="dropdown-item" href="http://localhost/hitemaphp/projethitema/ProjetHitemaPrincipal/backend/NewPoint.php"> Gestion Map </a>';
                                 }
                               ?>
                                  
