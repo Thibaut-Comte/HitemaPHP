@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 19 sep. 2018 à 14:24
+-- Généré le :  jeu. 20 sep. 2018 à 14:04
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -63,13 +63,24 @@ INSERT INTO `hotel` (`ID`, `Localisation`, `Name`, `Description`, `Image`, `Note
 DROP TABLE IF EXISTS `reservation`;
 CREATE TABLE IF NOT EXISTS `reservation` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `utilisateur` varchar(255) NOT NULL,
   `Hotel_ID` int(11) NOT NULL,
   `Hotel_Name` varchar(100) NOT NULL,
   `Arrivee` date NOT NULL,
   `Depart` date NOT NULL,
   `Nombre_Personne` int(11) NOT NULL,
+  `Date_Reservation` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `reservation`
+--
+
+INSERT INTO `reservation` (`ID`, `utilisateur`, `Hotel_ID`, `Hotel_Name`, `Arrivee`, `Depart`, `Nombre_Personne`, `Date_Reservation`) VALUES
+(1, 'admin', 6, 'Los Tapas', '2018-09-19', '2018-09-12', 6, 1537446506),
+(2, 'admin', 5, 'Die Deutschen', '2018-10-05', '2018-10-07', 5, 1537448252),
+(3, 'admin', 4, 'Au Petit Four', '2018-09-19', '2018-09-28', 8, 1537452156);
 
 -- --------------------------------------------------------
 
@@ -84,14 +95,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   `signup_date` int(11) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id_user`, `login`, `password`, `signup_date`) VALUES
-(1, 'admin', 'admin', 1537171336);
+(1, 'admin', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 1537171336),
+(2, 'utilisateur', 'DD10DDC914F2528F71534CFBF6D73A9FADD3661EFB09AE6D855C2D73FA81CC6B', 1547171336);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
