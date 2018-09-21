@@ -36,15 +36,9 @@
                         else
                         {
                             ?>
-                            <!--<a class="mr-2 " href="http://localhost/projethitema/backend/administration.php"><button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                              Administration
-                            </button></a>
-                            <a class="" href="http://localhost/projethitema/backend/Disconnect.php"><button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                              Se Déconnecter
-                            </button></a>-->
-                            <button  type="button" class="btn btn-test" data-toggle="modal" data-target="#exampleModal">
-                              S'identifier
-                            </button>
+                            
+                            <button  type="button" class="btn btn-test" data-toggle="modal" data-target="#exampleModal">S'identifier</button>
+                            <a href="http://localhost/hitemaphp/projethitema/ProjetHitemaPrincipal/inscription.php"><button  type="button" class="btn btn-test" >S'inscrire</button></a>
                             <?php
                         }
                         ?>
